@@ -7,9 +7,8 @@ import javax.inject.Inject
 
 class SignUpDataSource @Inject constructor(
     private val signUpWebService: SignUpWebService,
-    private val userRequest: UserRequest
 ): SignupDataSourceContract {
-    override suspend fun signup(): UserResponse {
-        return signUpWebService.signingAPI()
+    override suspend fun signup(userRequest: UserRequest): UserResponse {
+        return signUpWebService.signingAPI(userRequest)
     }
 }

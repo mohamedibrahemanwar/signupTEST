@@ -18,6 +18,10 @@ class ApiModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
+    @Provides
+    fun provideGsonFactory() : GsonConverterFactory{
+        return GsonConverterFactory.create()
+    }
 
     @Provides
     fun provideUserApi(retrofit: Retrofit): SignUpWebService {
